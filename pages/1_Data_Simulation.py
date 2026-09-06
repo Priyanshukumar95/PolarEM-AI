@@ -7,12 +7,12 @@ import pandas as pd
 from pathlib import Path
 from simulation.data_generator import main as generate_data
 
-st.header("📊 Data Pipeline & Simulation")
-st.caption("Person 1's module: synthetic sensor data generation and validation.")
+st.header("Data Pipeline & Simulation")
+st.caption(" ")
 
 days = st.slider("Days of hourly data to generate", 30, 180, 90)
 if st.button("Regenerate synthetic data"):
-    with st.spinner("Generating..."):
+    with st.spinner("Loading..."):
         df = generate_data(days=days)
     st.success(f"Generated {len(df)} hourly records.")
 

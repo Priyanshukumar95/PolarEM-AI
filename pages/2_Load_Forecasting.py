@@ -8,10 +8,9 @@ import joblib
 from pathlib import Path
 from ml.forecasting.load_forecast_xgboost import train as train_xgb, forecast_next_24h
 
-st.header("🔋 Load Forecasting")
+st.header("Load Forecasting")
 st.caption(
-    "Person 2's module: XGBoost is the primary model served to the "
-    "Optimization Engine. Prophet is available below as a second opinion."
+    " "
 )
 
 DATA_PATH = Path("data/historical/full_dataset.csv")
@@ -34,7 +33,7 @@ else:
 
 forecast = forecast_next_24h(model, df)
 
-st.subheader("Next 24-Hour Load Forecast (XGBoost — primary)")
+st.subheader("Next 24-Hour Load Forecast")
 st.line_chart(forecast.set_index("timestamp"))
 st.dataframe(forecast, use_container_width=True)
 st.download_button(

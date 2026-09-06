@@ -5,9 +5,9 @@ from utils.style import apply_style
 apply_style()
 from ml.optimization.optimization_engine import optimize_dispatch
 
-st.header("⚙️ Energy Optimization Engine")
+st.header(" Energy Optimization Engine")
 st.caption(
-    "Person 4's module: MILP solver finds the lowest-fuel-cost dispatch "
+    " MILP solver finds the lowest-fuel-cost dispatch "
     "plan (solar + wind + battery + diesel generator)."
 )
 

@@ -21,8 +21,8 @@ st.set_page_config(
 )
 apply_style()
 
-st.title("🧊 AI-Driven Smart Energy Management System")
-st.subheader("Polar Research Station — SIH Prototype Dashboard")
+st.title(" AI-Driven Smart Energy Management System")
+st.subheader("Polar Research Station Dashboard")
 
 DATA_PATH = Path("data/historical/full_dataset.csv")
 
@@ -43,18 +43,8 @@ st.line_chart(
     df.set_index("timestamp")[["load_kw", "solar_kw", "wind_kw"]].tail(24 * 7)
 )
 
-st.markdown("""
-Use the sidebar to open each module:
-
-- **Data Simulation** — regenerate / inspect the synthetic sensor dataset
-- **Load Forecasting** — XGBoost 24-hour demand prediction
-- **Renewable Forecasting** — solar & wind generation prediction
-- **Optimization Engine** — optimal dispatch across solar/wind/battery/
-  generator (MILP)
-- **Anomaly Detection** — flags equipment/sensor anomalies and maintenance risk
-""")
+st.markdown(""" """)
 
 st.caption(
-    "Built for SIH — this is a software prototype using simulated sensor "
-    "data, not a connected physical station."
+    " "
 )

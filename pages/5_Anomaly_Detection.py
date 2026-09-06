@@ -8,10 +8,9 @@ import joblib
 from pathlib import Path
 from ml.anomaly_detection.anomaly_detector import train, detect
 
-st.header("🚨 Anomaly Detection & Predictive Maintenance")
+st.header(" Anomaly Detection & Predictive Maintenance")
 st.caption(
-    "Person 4's module: Isolation Forest flags equipment/sensor readings "
-    "that look abnormal."
+    ""
 )
 
 DATA_PATH = Path("data/historical/full_dataset.csv")

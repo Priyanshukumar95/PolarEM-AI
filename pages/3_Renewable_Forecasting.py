@@ -14,8 +14,8 @@ from ml.forecasting.renewable_forecast import (
     WIND_FEATURES,
 )
 
-st.header("☀️ Renewable Energy Forecasting")
-st.caption("Person 3's module: solar & wind generation prediction.")
+st.header(" Renewable Energy Forecasting")
+st.caption(" Solar & wind generation prediction.")
 
 DATA_PATH = Path("data/historical/full_dataset.csv")
 if not DATA_PATH.exists():
