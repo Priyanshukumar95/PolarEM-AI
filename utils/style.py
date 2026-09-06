@@ -55,44 +55,26 @@ def apply_style():
             color: #374151;
         }
 
-        /* ---------- Sidebar nav arrows ---------- */
-        /* Streamlit's auto-generated multipage nav links live inside
-           [data-testid="stSidebarNav"] as <li><a>...</a></li>. We prepend
-           a "›" arrow to each link and slide it in slightly on hover,
-           matching the hover-lift feel used elsewhere in this theme. */
-        section[data-testid="stSidebarNav"] ul li a {
-            position: relative;
-            display: flex;
-            align-items: center;
-            padding-left: 26px !important;
-            border-radius: 8px;
-            transition: all 0.2s ease-in-out;
+        /* ---------- Sidebar nav arrows (max compatibility) ---------- */
+        section[data-testid="stSidebar"] a[href] {
+            display: flex !important;
+            justify-content: space-between !important;
+            align-items: center !important;
+            width: 100% !important;
+            position: relative !important;
         }
-        section[data-testid="stSidebarNav"] ul li a::before {
-            content: "›";
-            position: absolute;
-            left: 8px;
-            font-size: 18px;
-            font-weight: 700;
-            color: #9CA3AF;
-            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        section[data-testid="stSidebar"] a[href]::after {
+            content: ">" !important;
+            display: inline !important;
+            font-size: 16px !important;
+            font-weight: 700 !important;
+            color: #6B7280 !important;
+            margin-left: 8px !important;
+            opacity: 1 !important;
+            visibility: visible !important;
         }
-        section[data-testid="stSidebarNav"] ul li a:hover {
-            background-color: #EFF6FF;
-        }
-        section[data-testid="stSidebarNav"] ul li a:hover::before {
-            transform: translateX(3px);
-            color: #3B82F6;
-        }
-        /* Active/selected page: filled arrow + blue accent, so it's obvious
-           which page you're on at a glance */
-        section[data-testid="stSidebarNav"] ul li a[aria-selected="true"] {
-            background-color: #EFF6FF;
-            font-weight: 600;
-        }
-        section[data-testid="stSidebarNav"] ul li a[aria-selected="true"]::before {
-            content: "▸";
-            color: #3B82F6;
+        section[data-testid="stSidebar"] a[href]:hover::after {
+            color: #3B82F6 !important;
         }
 
         /* ---------- Metric cards ---------- */
