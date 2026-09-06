@@ -1,6 +1,8 @@
 """PERSON 4 — Optimization Engine page."""
 
 import streamlit as st
+from utils.style import apply_style
+apply_style()
 from ml.optimization.optimization_engine import optimize_dispatch
 
 st.header("⚙️ Energy Optimization Engine")

@@ -1,6 +1,8 @@
 """PERSON 1 — Data Pipeline & Simulation page."""
 
 import streamlit as st
+from utils.style import apply_style
+apply_style()
 import pandas as pd
 from pathlib import Path
 from simulation.data_generator import main as generate_data

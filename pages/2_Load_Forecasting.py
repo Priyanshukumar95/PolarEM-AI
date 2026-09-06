@@ -1,6 +1,8 @@
 """PERSON 2 — Load Forecasting page."""
 
 import streamlit as st
+from utils.style import apply_style
+apply_style()
 import pandas as pd
 import joblib
 from pathlib import Path

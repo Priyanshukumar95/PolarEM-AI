@@ -12,12 +12,14 @@ import streamlit as st
 import pandas as pd
 from pathlib import Path
 from simulation.data_generator import main as generate_data
+from utils.style import apply_style
 
 st.set_page_config(
     page_title="Polar Energy Management System",
     page_icon="🧊",
     layout="wide",
 )
+apply_style()
 
 st.title("🧊 AI-Driven Smart Energy Management System")
 st.subheader("Polar Research Station — SIH Prototype Dashboard")
