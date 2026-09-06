@@ -43,7 +43,7 @@ def apply_style():
             font-weight: 600 !important;
         }
         p, span, label, .stCaption {
-            color: #6B7280 !important;
+            color: #000000 !important;
         }
 
         /* ---------- Sidebar ---------- */
@@ -110,7 +110,7 @@ def apply_style():
             border-color: #3B82F6;
         }
         div[data-testid="stMetricLabel"] {
-            color: #6B7280 !important;
+            color: #000000 !important;
             font-size: 13px !important;
             font-weight: 500 !important;
         }
@@ -182,7 +182,7 @@ def apply_style():
         }
         .custom-card-icon {
             font-size: 22px;
-            color: #6B7280;
+            color: #000000;
             margin-bottom: 6px;
         }
         .custom-card-title {
@@ -192,7 +192,7 @@ def apply_style():
             margin-bottom: 4px;
         }
         .custom-card-desc {
-            color: #6B7280;
+            color: #000000;
             font-size: 13px;
         }
 
