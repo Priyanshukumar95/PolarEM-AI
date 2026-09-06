@@ -7,7 +7,15 @@ rounded cards, hover lift effect.
 Usage — put this at the TOP of app.py and every file in pages/:
     from utils.style import apply_style
     apply_style()
+
+NOTE on the sidebar showing "app" instead of "Dashboard":
+Streamlit's multipage nav takes its label straight from the entry file's
+name. Rename app.py -> Dashboard.py and the sidebar will show "Dashboard"
+automatically — no code change needed. (If you're using the newer
+st.navigation()/st.Page() API instead of the pages/ folder convention,
+set the label explicitly there instead: st.Page("app.py", title="Dashboard").)
 """
+
 import streamlit as st
 
 
@@ -45,6 +53,46 @@ def apply_style():
         }
         section[data-testid="stSidebar"] .stMarkdown {
             color: #374151;
+        }
+
+        /* ---------- Sidebar nav arrows ---------- */
+        /* Streamlit's auto-generated multipage nav links live inside
+           [data-testid="stSidebarNav"] as <li><a>...</a></li>. We prepend
+           a "›" arrow to each link and slide it in slightly on hover,
+           matching the hover-lift feel used elsewhere in this theme. */
+        section[data-testid="stSidebarNav"] ul li a {
+            position: relative;
+            display: flex;
+            align-items: center;
+            padding-left: 26px !important;
+            border-radius: 8px;
+            transition: all 0.2s ease-in-out;
+        }
+        section[data-testid="stSidebarNav"] ul li a::before {
+            content: "›";
+            position: absolute;
+            left: 8px;
+            font-size: 18px;
+            font-weight: 700;
+            color: #9CA3AF;
+            transition: transform 0.2s ease-in-out, color 0.2s ease-in-out;
+        }
+        section[data-testid="stSidebarNav"] ul li a:hover {
+            background-color: #EFF6FF;
+        }
+        section[data-testid="stSidebarNav"] ul li a:hover::before {
+            transform: translateX(3px);
+            color: #3B82F6;
+        }
+        /* Active/selected page: filled arrow + blue accent, so it's obvious
+           which page you're on at a glance */
+        section[data-testid="stSidebarNav"] ul li a[aria-selected="true"] {
+            background-color: #EFF6FF;
+            font-weight: 600;
+        }
+        section[data-testid="stSidebarNav"] ul li a[aria-selected="true"]::before {
+            content: "▸";
+            color: #3B82F6;
         }
 
         /* ---------- Metric cards ---------- */
