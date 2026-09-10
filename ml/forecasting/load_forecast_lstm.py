@@ -1,17 +1,3 @@
-"""
-load_forecast_lstm.py
-PERSON 2 — Load Forecasting Module (OPTIONAL / STRETCH GOAL)
-
-A small LSTM sequence model, included so the "3 models" requirement from the
-original brief (XGBoost + LSTM + Prophet) is fully covered in code. Build
-this ONLY if Hours 20-24 have slack (see the timeline) -- it needs
-TensorFlow, which is a heavy, slow install and is NOT included in the
-Streamlit Cloud requirements.txt for the live demo. Train and screenshot it
-locally for your model-comparison report instead.
-
-Run directly:  python ml/forecasting/load_forecast_lstm.py
-"""
-
 import numpy as np
 import pandas as pd
 import joblib
