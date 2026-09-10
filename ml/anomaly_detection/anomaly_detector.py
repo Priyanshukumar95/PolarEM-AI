@@ -1,14 +1,3 @@
-"""
-anomaly_detector.py
-PERSON 4 — Anomaly Detection & Predictive Maintenance
-
-Uses an Isolation Forest to flag hours where sensor readings look abnormal
-(equipment faults, sensor glitches). Also includes a simple rolling-average
-heuristic that flags a rising fuel-consumption trend as a maintenance risk.
-
-Run directly:  python ml/anomaly_detection/anomaly_detector.py
-"""
-
 import pandas as pd
 import joblib
 from pathlib import Path
@@ -51,12 +40,21 @@ def detect(model, readings_df):
     return out
 
 
-def predictive_maintenance_flags(df, fuel_threshold_pct_increase=40):
+def predictive_maintenance_flags(df, fuel_threshold_pct_increase=40, min_baseline=1e-6):
     """Flags a sustained rise in fuel consumption above the early baseline
     as a generator maintenance risk."""
     df = df.copy()
     df["fuel_rolling_avg"] = df["fuel_consumption_l"].rolling(24, min_periods=1).mean()
+
     baseline = df["fuel_rolling_avg"].iloc[:24].mean()
+
+    # Guard: if baseline is NaN or ~0 (e.g. generator idle in first 24h),
+    # the old code produced baseline*1.4 ≈ 0, which flagged almost every
+    # nonzero reading as a false "maintenance_risk". Skip flagging instead.
+    if pd.isna(baseline) or baseline < min_baseline:
+        df["maintenance_risk"] = False
+        return df
+
     df["maintenance_risk"] = df["fuel_rolling_avg"] > baseline * (
         1 + fuel_threshold_pct_increase / 100
     )
