@@ -1,15 +1,3 @@
-"""
-load_forecast_prophet.py
-PERSON 2 — Load Forecasting Module (SECONDARY / seasonal cross-check model)
-
-Prophet is good at capturing daily/weekly seasonality and gives a second
-opinion next to the XGBoost forecast. Train and use it LOCALLY for your
-model-comparison slide; see the deployment guide for why the live Streamlit
-Cloud demo relies on XGBoost as the model actually served.
-
-Run directly:  python ml/forecasting/load_forecast_prophet.py
-"""
-
 import pandas as pd
 import joblib
 from pathlib import Path
