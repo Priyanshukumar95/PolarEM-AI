@@ -1,21 +1,3 @@
-"""
-optimization_engine.py
-PERSON 4 — Energy Optimization Engine (MILP via PuLP)
-
-Decides, for a given hour, the lowest-fuel-cost way to meet load using
-solar, wind, battery discharge, and the diesel generator as a last resort.
-
-NOTE ON SCOPE: the original brief also called for a Reinforcement Learning
-dispatch agent. A genuinely trained, converged RL agent is not realistic to
-build AND validate inside a 24-hour hackathon window -- a rushed one would
-just be decorative code that doesn't actually learn anything useful. This
-MILP solver is the real, working optimizer for your demo. If you want to
-gesture at the RL roadmap in your pitch deck, frame it as "future work"
-rather than shipping a fake agent.
-
-Run directly:  python ml/optimization/optimization_engine.py
-"""
-
 import pulp
 
 
