@@ -1,14 +1,3 @@
-"""
-renewable_forecast.py
-PERSON 3 — Renewable Energy Forecasting (Solar + Wind)
-
-Two lightweight XGBoost regressors: one predicts solar output from time-of-day
-+ season + cloud cover, the other predicts wind output from time-of-day +
-season + wind speed.
-
-Run directly:  python ml/forecasting/renewable_forecast.py
-"""
-
 import pandas as pd
 import joblib
 from pathlib import Path
