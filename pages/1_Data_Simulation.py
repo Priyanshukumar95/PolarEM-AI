@@ -1,5 +1,3 @@
-"""PERSON 1 — Data Pipeline & Simulation page."""
-
 import streamlit as st
 from utils.style import apply_style
 apply_style()
