@@ -1,13 +1,3 @@
-"""
-load_forecast_xgboost.py
-PERSON 2 — Load Forecasting Module (PRIMARY MODEL)
-
-Trains a gradient-boosted tree model to predict hourly load (kW) and
-provides an iterative 24-hour-ahead forecast function used by the dashboard.
-
-Run directly:  python ml/forecasting/load_forecast_xgboost.py
-"""
-
 import pandas as pd
 import joblib
 from pathlib import Path
